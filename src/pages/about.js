@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../components/layout/layout";
 
-const IndexPage = () => {
+const AboutPage = () => {
   return (
     <Layout>
-      <h1>Hello</h1>
+      <h1>About me</h1>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default AboutPage;

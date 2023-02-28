@@ -4,16 +4,18 @@ import React from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 
-import classes from "./layout.module.scss"
+import * as classes from "./layout.module.scss"
 
 const Layout = (props) => {
-    return (
-        <section className={classes.container}>
-            <Header/>
-            {props.children}
-            <Footer/>
-        </section>
-    );
+  return (
+    <section className={classes.container}>
+      <section className={classes.content}>
+        <Header/>
+        {props.children}
+      </section>
+      <Footer/>
+    </section>
+  );
 };
 
 export default Layout;

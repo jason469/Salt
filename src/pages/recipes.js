@@ -2,21 +2,23 @@ import React from "react";
 import {Link, graphql, useStaticQuery} from "gatsby";
 
 import Layout from "../components/layout/layout";
+import Head from "../components/head/head"
 import * as classes from "./recipes.module.scss"
 
 const RecipesPage = () => {
   const data = useStaticQuery(graphql`
       query {
-          allMarkdownRemark {
+          allContentfulRecipe (
+              sort:{
+                  title:ASC,
+              }
+          ) {
               edges {
                   node {
-                      frontmatter {
-                          title
-                      }
+                      title
+                      slug
+                      createdAt(formatString:"MMM Do, YYYY")
                       id
-                      fields {
-                          slug
-                      }
                   }
               }
           }
@@ -25,13 +27,15 @@ const RecipesPage = () => {
   
   return (
     <Layout>
+      <Head title="Recipes" />
       <h1>Recipes</h1>
       <ol className={classes.recipes}>
-        {data.allMarkdownRemark.edges.map(edge => {
+        {data.allContentfulRecipe.edges.map(edge => {
           return (
             <li key={edge.node.id} className={classes.post}>
-              <Link to={`/recipes/${edge.node.fields.slug}`}>
-                <h2>{edge.node.frontmatter.title}</h2>
+              <Link to={`/recipes/${edge.node.slug}`}>
+                <h2>{edge.node.title}</h2>
+                <p>{edge.node.createdAt}</p>
               </Link>
             </li>
           )

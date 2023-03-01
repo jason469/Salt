@@ -1,5 +1,6 @@
 import React from "react";
 import {graphql} from "gatsby";
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
 import Layout from "../components/layout/layout";
 
@@ -8,27 +9,46 @@ export const query = graphql`
     query (
         $slug:String
     ) {
-        markdownRemark (
-            fields: {
-                slug: {
-                    eq: $slug
-                }
+        contentfulRecipe (
+            slug: {
+                eq: $slug
             }
         ) {
-            frontmatter {
-                title
+            title
+            createdAt(formatString:"MMM Do, YYYY")
+            body {
+                raw
+                references {
+                    url
+                    title
+                }
             }
-            html
         }
     }
 ` // The output of this query is passed into the props of the function below
 
 const Recipe = (props) => {
+  let options = {}
+  const body = props.data.contentfulRecipe.body
+  console.log(body)
+  
+  if (body.references.length !== 0) {
+    const alt = body.references[0].title
+    const url = body.references[0].url
+    options = {
+      renderNode: {
+        "embedded-asset-block": node => {
+          return <img src={url} alt={alt}/>
+        }
+      }
+    }
+  }
+  
   return (
     <Layout>
-      <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-      <section dangerouslySetInnerHTML={{__html:props.data.markdownRemark.html}}>
-      </section>
+      <h1>{props.data.contentfulRecipe.title}</h1>
+      <p>{props.data.contentfulRecipe.createdAt}</p>
+      {documentToReactComponents(JSON.parse(props.data.contentfulRecipe.body.raw), options)}
     </Layout>
   )
 }

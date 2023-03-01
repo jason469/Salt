@@ -3,6 +3,7 @@ import {graphql} from "gatsby";
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
 import Layout from "../components/layout/layout";
+import Head from "../components/head/head"
 
 // $slug comes from the context we set up when creating the page in createPage
 export const query = graphql`
@@ -46,6 +47,7 @@ const Recipe = (props) => {
   
   return (
     <Layout>
+      <Head title={props.data.contentfulRecipe.title}/>
       <h1>{props.data.contentfulRecipe.title}</h1>
       <p>{props.data.contentfulRecipe.createdAt}</p>
       {documentToReactComponents(JSON.parse(props.data.contentfulRecipe.body.raw), options)}

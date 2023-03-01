@@ -25,4 +25,4 @@ In the future, I also have the following ideas
 
 # Where can I see Salt?
 To visit Salt, please visit the following link: <br>
-> [Salt]()
+> [Salt](https://salt-recipes.netlify.app/)

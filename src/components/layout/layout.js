@@ -7,7 +7,6 @@ import Footer from "../footer/footer";
 import * as classes from "./layout.module.scss"
 
 const Layout = (props) => {
-  console.log(props)
   return (
     <section className={classes.container}>
       <section className={classes.content}>

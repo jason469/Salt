@@ -31,7 +31,6 @@ export const query = graphql`
 const Recipe = (props) => {
   let options = {}
   const body = props.data.contentfulRecipe.body
-  console.log(body)
   
   if (body.references.length !== 0) {
     const alt = body.references[0].title

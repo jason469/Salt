@@ -15,6 +15,7 @@ This is a simple frontend application, with all data management beind handled by
 Nonetheless, the technologies used are:
 - _**Gatsby**_ makes up the frontend. <br>
 - _**GraphQL**_ is used to communicate between the frontend and CMS <br>
+- _**SCSS**_ is used to style the application <br>
 - _**Contentful**_ is used as the CMS
 - _**Netlify**_ was used to deploy the application to the internet
 

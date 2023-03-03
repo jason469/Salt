@@ -6,6 +6,7 @@ module.exports.createPages = async ({graphql, actions}) => {
   const {createPage} = actions
   const recipeTemplate = path.resolve('./src/templates/recipe.js')
   const allRecipeTemplate = path.resolve('./src/pages/recipes.js')
+  
   const result = await (graphql(`
           query {
             allContentfulRecipe {

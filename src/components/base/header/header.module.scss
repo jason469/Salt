@@ -1,30 +1,113 @@
-.header {
-  padding: 1rem 0 3rem;
+$gap: 1rem;
+$white: 0, 0%, 100%;
+
+:host {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo {
-  color: black;
-  font-size: 3rem;
-  text-decoration: none;
-}
-
-.nav-list {
+// Primary header
+.navigation {
+  align-items: center;
+  z-index: 1000;
   display: flex;
-  list-style-type: none;
-  margin: 0;
+  gap: $gap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  .active {
+    color: #FF0000;
+    border-bottom: .2rem solid #FF0000;
+    padding-bottom: 1rem;
+  }
+
+  a {
+    color: black;
+  }
+
+  .logo {
+    a {
+      font-family: "Kavoon", sans-serif;
+      font-size: 3rem;
+      font-style: italic;
+      color: #EF820D
+    }
+  }
+
+  .primaryNavigation {
+    list-style: none;
+    margin: 0 0 0 0;
+
+    display: flex;
+    flex-direction: row;
+    padding-inline: clamp(3rem, 5vw, 10rem);
+    $gap: clamp(1.5rem, 5vw, 3rem);
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    padding-left: 37%;
+    letter-spacing: 0.2rem;
+
+    a {
+      text-decoration: none;
+      transition: 250ms ease-in;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      color: white;
+
+      > [aria-hidden="true"] {
+        font-weight: 700;
+        margin-inline-end: 0.75em;
+      }
+
+      &:link, &:visited {
+        color: black;
+      }
+
+      &:hover {
+        color: #FF0000;
+      }
+    }
+
+    &__sub {
+      font-weight: bold;
+      display: flex !important;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
+
 }
 
-.nav-item {
-  color: #999;
-  font-size: 0.9rem;
-  margin-right: 1.3rem;
-  text-decoration: none;
+.mobile-nav-toggle {
+  display: none;
 }
 
-.nav-item:hover {
-  color: #666
+
+@supports (backdrop-filter: blur(1rem)) {
+  .navigation {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+  }
 }
 
-.active-nav-item {
-  color: #333;
+.sr-only { // Stands for screen reader only
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }

@@ -10,7 +10,7 @@ import * as classes from "./recipes.module.scss"
 
 export const recipesQuery = graphql`
     query ($skip: Int!, $limit: Int!) {
-        #      query {
+#              query {
         allContentfulRecipe (
             sort:{
                 title:ASC,

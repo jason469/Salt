@@ -2,8 +2,8 @@ import React from "react";
 import {graphql} from "gatsby";
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
-import Layout from "../components/layout/layout";
-import Head from "../components/head/head"
+import Layout from "../components/base/layout/layout";
+import Head from "../components/base/head/head"
 
 // $slug comes from the context we set up when creating the page in createPage
 export const query = graphql`

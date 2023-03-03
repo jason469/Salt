@@ -13,9 +13,9 @@ This means that while anyone can view **_Salt_**, only authorised users can add 
 ### What technologies does this app use?
 This is a simple frontend application, with all data management beind handled by a CMS. <br>
 Nonetheless, the technologies used are:
-- _**Gatsby**_ makes up the frontend. <br>
-- _**GraphQL**_ is used to communicate between the frontend and CMS <br>
-- _**SCSS**_ is used to style the application <br>
+- _**Gatsby**_ makes up the frontend. 
+- _**GraphQL**_ is used to communicate between the frontend and CMS 
+- _**SCSS**_ is used to style the application 
 - _**Contentful**_ is used as the CMS
 - _**Netlify**_ was used to deploy the application to the internet
 

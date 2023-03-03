@@ -1,21 +1,39 @@
 const path = require('path')
+const _ = require('lodash');
+const {paginate} = require('gatsby-awesome-pagination')
 
 module.exports.createPages = async ({graphql, actions}) => {
   const {createPage} = actions
   const recipeTemplate = path.resolve('./src/templates/recipe.js')
-  const res = await graphql(`
-    query {
-      allContentfulRecipe {
-        edges {
-          node {
-            slug
+  const allRecipeTemplate = path.resolve('./src/pages/recipes.js')
+  const result = await (graphql(`
+          query {
+            allContentfulRecipe {
+              edges {
+                node {
+                  slug
+                  id
+                }
+              }
+            }
           }
-        }
-      }
-    }
-  `)
+        `
+    )
+  )
+  if (result.errors) {
+    console.log(result.errors);
+  }
   
-  res.data.allContentfulRecipe.edges.forEach(edge => {
+  const allRecipes = _.get(result, "data.allContentfulRecipe.edges")
+  paginate({
+    createPage,
+    items: allRecipes,
+    itemsPerPage: 5,
+    pathPrefix: '/recipes',
+    component: path.resolve(allRecipeTemplate)
+  })
+  
+  allRecipes.forEach(edge => {
     const slug = edge.node.slug
     
     createPage({

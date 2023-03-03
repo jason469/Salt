@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'gatsby'
 
-import Layout from "../components/layout/layout";
-import Head from "../components/head/head"
+import Layout from "../components/base/layout/layout";
+import Head from "../components/base/head/head"
 
 const NotFound = (props) => {
   return (

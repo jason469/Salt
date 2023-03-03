@@ -27,9 +27,6 @@ const Header = () => {
         <ul className={classes.primaryNavigation}>
           <section className={`${classes.primaryNavigation__sub} ${classes.primaryNavigation__left}` }>
             <li>
-              <Link to="/" className={classes.navItem} activeClassName={classes.activeNavItem}>Home</Link>
-            </li>
-            <li>
               <Link to="/recipes" className={classes.navItem} activeClassName={classes.activeNavItem}>Recipes</Link>
             </li>
           </section>

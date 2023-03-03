@@ -1,0 +1,93 @@
+.top {
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+      font-size: 2rem;
+      grid-column: 1 / span 1;
+      grid-row: 1 / -1;
+      justify-self: end;
+      color: #505050;
+    }
+  }
+
+  &__bio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: #848484;
+
+    &__author {
+      color: black;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__coverImage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__ingredients {
+    &__title {
+      font-weight: bold;
+      margin-bottom: 0.8rem !important;
+    }
+
+    &__list {
+      padding-left: 3rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &__method {
+    &__title {
+      font-weight: bold;
+      margin-bottom: 0.8rem !important;
+    }
+
+    &__steps {
+      padding-left: 3rem;
+
+      ol {
+        list-style: none;
+        counter-reset: item;
+      }
+
+      li {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      li:before {
+        counter-increment: item;
+        content: counter(item);
+        position: absolute;
+        left: -2.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

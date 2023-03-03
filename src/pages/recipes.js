@@ -9,14 +9,14 @@ import RecipeListItem from "../components/recipes/recipeListItem/recipeListItem"
 import * as classes from "./recipes.module.scss"
 
 export const recipesQuery = graphql`
-    query ($skip: Int!, $limit: Int!) {
-#              query {
+#    query ($skip: Int!, $limit: Int!) {
+                      query {
         allContentfulRecipe (
             sort:{
                 title:ASC,
             }
-            skip: $skip
-            limit: $limit
+#            skip: $skip
+#            limit: $limit
         ) {
             edges {
                 node {
@@ -24,6 +24,13 @@ export const recipesQuery = graphql`
                     slug
                     createdAt(formatString:"MMM Do, YYYY")
                     id
+                    coverImage {
+                        id
+                        file {
+                            url
+                            fileName
+                        }
+                    }
                 }
             }
         }

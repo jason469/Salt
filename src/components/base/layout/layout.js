@@ -1,4 +1,5 @@
 import '../../../common/styles/reset.scss'
+import '../../../common/styles/base.scss'
 
 import React from "react";
 import Header from "../header/header";

@@ -36,8 +36,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "sass": "^1.58.3",
-    "tailwindcss": "^3.2.7"
+    "sass": "^1.58.3"
   },
   "repository": {
     "type": "git",
@@ -47,6 +46,10 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "devDependencies": {
-    "env-cmd": "^10.1.0"
+    "autoprefixer": "^10.4.13",
+    "env-cmd": "^10.1.0",
+    "gatsby-plugin-postcss": "^6.7.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
   }
 }

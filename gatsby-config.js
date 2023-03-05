@@ -7,6 +7,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
+    'gatsby-plugin-postcss',
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

@@ -15,27 +15,27 @@ const Header = () => {
   `)
   
   return (
-    <header className={classes.header}>
-      <nav className={classes.navigation}>
-        <section className={classes.primaryHeader}>
-          <h1 className={classes.logo}>
+    <header className="">
+      <nav className="">
+        <section className="">
+          <h1 className="">
             <Link to="/">
               {data.site.siteMetadata.title}
             </Link>
           </h1>
         </section>
-        <ul className={classes.primaryNavigation}>
-          <section className={`${classes.primaryNavigation__sub} ${classes.primaryNavigation__left}` }>
+        <ul className="">
+          <section className="">
             <li>
-              <Link to="/recipes" className={classes.navItem} activeClassName={classes.activeNavItem}>Recipes</Link>
+              <Link to="/recipes" className="">Recipes</Link>
             </li>
           </section>
-          <section className={`${classes.primaryNavigation__sub} ${classes.primaryNavigation__right}` }>
+          <section className="">
             <li>
-              <Link to="/about" className={classes.navItem} activeClassName={classes.activeNavItem}>About</Link>
+              <Link to="/about" className="">About</Link>
             </li>
             <li>
-              <Link to="/contact" className={classes.navItem} activeClassName={classes.activeNavItem}>Contact</Link>
+              <Link to="/contact" className="">Contact</Link>
             </li>
           </section>
         </ul>

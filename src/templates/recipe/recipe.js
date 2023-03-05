@@ -39,7 +39,6 @@ export const query = graphql`
 const Recipe = (props) => {
   let options = {}
   const data = props.data.contentfulRecipe
-  console.log(data)
   
   return (
     <Layout>

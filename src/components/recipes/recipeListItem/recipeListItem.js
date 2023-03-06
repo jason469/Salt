@@ -25,7 +25,7 @@ const RecipeListItem = ({node}) => {
   return (
     <Link to={`/recipes/${node.slug}`}>
       <li key={node.id}
-          className={`${classes.card} | bg-white rounded | overflow-hidden | shadow-md  | relative | hover:shadow-lg`}>
+          className={`${classes.card} | bg-white rounded | overflow-hidden | shadow-md  | relative transition duration-300| hover:shadow-lg`}>
         <section className={`${classes.card__coverImage}`}>
           <img
             src={url}

@@ -29,7 +29,7 @@ module.exports.createPages = async ({graphql, actions}) => {
   paginate({
     createPage,
     items: allRecipes,
-    itemsPerPage: 5,
+    itemsPerPage: 6,
     pathPrefix: '/recipes',
     component: path.resolve(allRecipeTemplate)
   })

@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <Head title="About"/>
-      <h1>About me</h1>
+      <h1 className={`text-6xl font-semibold | mt-12`}>About</h1>
     </Layout>
   );
 };

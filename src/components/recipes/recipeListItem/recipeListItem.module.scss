@@ -3,21 +3,9 @@
 
 .card {
   @include c.image_with_text_overlay(".card__coverImage", #FFFFFF, #a7ebf3, 1rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 0.5rem;
-  margin: 1rem 0;
-  background: #c5f2f7;
-  padding: 1rem;
-  height: 100%;
   cursor: pointer;
-  transition: 0.3s ease-in;
-
-  &:hover {
-    background: #70deec;
-  }
+  transition: 0.1s ease-in;
 
   &__title {
     margin-bottom: 0;

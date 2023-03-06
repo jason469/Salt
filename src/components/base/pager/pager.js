@@ -5,14 +5,16 @@ const Pager = ({pageContext}) => {
   const {previousPagePath, nextPagePath} = pageContext;
   
   return (
-    <section>
+    <section className={`mt-5`}>
       {previousPagePath && (
-        // <span><Link to={previousPagePath}><i className="fa-solid fa-circle-chevron-left"></i></Link></span>
-        <span><Link to={previousPagePath}>Previous</Link></span>
+        <span
+          className={`button | bg-secondary-100 text-secondary-200 border-secondary-200 border-2 transform transition | hover:shadow-inner hover:scale-125 hover:bg-opacity-50 ease-out duration-300`}><Link
+          to={previousPagePath}>Previous</Link></span>
       )}
       {nextPagePath && (
-        // <span><Link to={nextPagePath}><i className="fa-solid fa-circle-chevron-right"></i></Link></span>
-        <span><Link to={nextPagePath}>Next</Link></span>
+        <span
+          className={`button | bg-secondary-100 text-secondary-200 border-secondary-200 border-2 transform transition | hover:shadow-inner hover:scale-125 hover:bg-opacity-50 ease-out duration-300`}><Link
+          to={nextPagePath}>Next</Link></span>
       )}
     </section>
   )

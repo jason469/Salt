@@ -9,12 +9,18 @@ import * as classes from "./layout.module.scss"
 
 const Layout = (props) => {
   return (
-    <section className={classes.container}>
-      <section className={classes.content}>
+    <section className={`${classes.content} text-gray-500 | grid md:grid-cols-7`}>
+      <section className={`md:col-span-1`}>
         <Header/>
-        {props.children}
       </section>
-      <Footer/>
+      <section className={`font-body | bg-gray-100 | md:col-span-6 h-full | flex flex-col gap-4 justify-between`}>
+        <section className={`px-16 py-3`}>
+          {props.children}
+        </section>
+        <section className={`w-full`}>
+          <Footer/>
+        </section>
+      </section>
     </section>
   );
 };

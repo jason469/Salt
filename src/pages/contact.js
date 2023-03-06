@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <Layout>
       <Head title="Contact"/>
-      <h1>Contact</h1>
+      <h1 className={`text-6xl font-semibold | mt-12`}>Contact</h1>
     </Layout>
   )
 };

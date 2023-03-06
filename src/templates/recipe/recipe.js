@@ -32,13 +32,23 @@ export const query = graphql`
                     fileName
                 }
             }
+            culture {
+                name
+            }
         }
     }
 ` // The output of this query is passed into the props of the function below
 
 const Recipe = (props) => {
   let options = {}
+  let cultureName = ''
   const data = props.data.contentfulRecipe
+  
+  if (data.culture) {
+    cultureName = data.culture.name
+  } else {
+    cultureName = 'Misc'
+  }
   
   return (
     <Layout>
@@ -49,6 +59,8 @@ const Recipe = (props) => {
         </section>
         <section className={classes.top__bio}>
           <p> written by <span className={classes.top__bio__author}>Jason Liu</span></p>
+          <p>|</p>
+          <p className={`uppercase`}>{cultureName}</p>
           <p>|</p>
           <p>{data.createdAt}</p>
         </section>
@@ -68,23 +80,23 @@ const Recipe = (props) => {
         </section>
       </section>
       <section className={classes.bottom}>
-      <section className={classes.bottom__ingredients}>
-        <h3 className={classes.bottom__ingredients__title}>Ingredients</h3>
-        <ul className={classes.bottom__ingredients__list}>
-          {data.ingredients.map(ingredient => {
-            return (
-              <li>{ingredient}</li>
-            )
-          })}
-        </ul>
-      </section>
-      <section className={classes.bottom__method}>
-        <h3 className={classes.bottom__method__title}>Method</h3>
-        <section className={classes.bottom__method__steps}>
-          {documentToReactComponents(JSON.parse(data.method.raw), options)}
+        <section className={classes.bottom__ingredients}>
+          <h3 className={classes.bottom__ingredients__title}>Ingredients</h3>
+          <ul className={classes.bottom__ingredients__list}>
+            {data.ingredients.map(ingredient => {
+              return (
+                <li>{ingredient}</li>
+              )
+            })}
+          </ul>
+        </section>
+        <section className={classes.bottom__method}>
+          <h3 className={classes.bottom__method__title}>Method</h3>
+          <section className={classes.bottom__method__steps}>
+            {documentToReactComponents(JSON.parse(data.method.raw), options)}
+          </section>
         </section>
       </section>
-        </section>
     </Layout>
   )
 }

@@ -1,0 +1,25 @@
+.about {
+  &__reasons {
+    ol {
+      list-style: none;
+      counter-reset: item;
+
+      li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      li:before {
+        counter-increment: item;
+        content: counter(item);
+        position: absolute;
+        left: -2.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

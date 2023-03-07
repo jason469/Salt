@@ -9,7 +9,7 @@ import * as classes from "./layout.module.scss"
 
 const Layout = (props) => {
   return (
-    <section className={`${classes.content} text-gray-500 | grid md:grid-cols-7`}>
+    <section className={`${classes.content} text-gray-500 | grid md:grid-cols-7 justify-center`}>
       <section className={`md:col-span-1`}>
         <Header/>
       </section>

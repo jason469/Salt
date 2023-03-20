@@ -54,11 +54,11 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     icon: 'src/assets/images/icon.png',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/icon.svg',
+      },
+    },
   ]
 };
